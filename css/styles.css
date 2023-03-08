@@ -1,0 +1,350 @@
+@font-face {
+  font-family: "Poppins-light";
+  src: url("fonts/Poppins-ExtraLight.ttf");
+  font-weight: normal;
+  font-size: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Regular.ttf");
+  font-weight: normal;
+  font-size: normal;
+}
+@font-face {
+  font-family: "WebSymbolsRegular";
+  src: url("fonts/websymbols-regular-webfont.eot");
+  src: url("fonts/websymbols-regular-webfont.eot?#iefix") format("embeded-opentype"), url("fonts/websymbols-regular-webfont.woff") format("woff"), url("fonts/websymbols-regular-webfont.ttf") format("truetype"), url("fonts/websymbols-regular-webfont.svg#WebSymbolsRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary_color: #885AA2;
+  --primary_color_dark: #7f3da5;
+  --secondary_color: #F3432C;
+  --secondary_color_dark: #f32105;
+  --auxiliar_color: #E9A12B;
+  --auxiliar_color_dark: #ca7e02;
+}
+
+body {
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+}
+
+/*Estilos generales*/
+/*Boton de buscar receta*/
+.btn {
+  cursor: pointer;
+  outline: 0;
+}
+
+/*Texto dentro del buscador*/
+.text {
+  opacity: 0.8;
+}
+
+/*Titulos principales*/
+.title {
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: var(--secondary_color);
+}
+
+/*Contenedor principal*/
+.container {
+  min-height: 100vh;
+  /*background-color: red;*/
+}
+.container .meal-wrapper {
+  max-width: 1280px;
+  margin: 0px auto;
+  padding: 2rem;
+  text-align: center;
+  /*background-color: blueviolet;*/
+}
+.container .meal-wrapper .meal-search {
+  margin: 2rem 0px; /*vertical (top-bottom) | horizontal (right-left)
+background-color: aqua;*/
+}
+.container .meal-wrapper .meal-search .welcome {
+  font-size: 1.2rem;
+  font-family: Poppins-light;
+  padding: 0 5rem;
+}
+.container .meal-wrapper .meal-search .meal-search-box {
+  margin: 1.2rem;
+  display: flex;
+  align-items: stretch;
+  display: flex;
+  justify-content: center;
+  /*background-color: #e48c00;*/
+}
+.container .meal-wrapper .meal-search .meal-search-box .search-content,
+.container .meal-wrapper .meal-search .meal-search-box .search.btn {
+  width: 50%;
+}
+.container .meal-wrapper .meal-search .meal-search-box .search-content {
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-family: "Poppins-light";
+  outline: 0;
+  border: 1px solid var(--primary_color);
+  color: black;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.container .meal-wrapper .meal-search .meal-search-box .search-btn {
+  width: 5%;
+  height: 55px;
+  font-size: 1.8rem;
+  background-image: linear-gradient(to right, var(--primary_color) 11%, var(--auxiliar_color) 61%, var(--secondary_color) 100%);
+  color: white;
+  border: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  transition: all 0.4 linear;
+}
+.container .meal-wrapper .meal-search .meal-search-box .search-content:hover {
+  box-shadow: 0px 0px 2px;
+}
+.container .meal-wrapper .meal-search .meal-search-box .search-btn:hover {
+  background-image: linear-gradient(to right, var(--secondary_color), var(--auxiliar_color), var(--primary_color));
+}
+.container .meal-wrapper .meal-result {
+  margin-top: 4rem;
+}
+.container .meal-wrapper .meal-result #meal {
+  margin: 2.4rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+}
+.container .meal-wrapper .meal-result #meal .meal-item {
+  overflow: hidden;
+  box-shadow: 0 4px 21px -12px #747474;
+  margin: 2rem 0;
+  width: 85%;
+}
+.container .meal-wrapper .meal-result #meal img {
+  height: 250px;
+}
+.container .meal-wrapper .meal-result #meal .btn {
+  border: none;
+  background-color: var(--auxiliar_color);
+}
+.container .meal-wrapper .meal-result #meal .btn:hover {
+  border: none;
+  background-color: var(--auxiliar_color_dark);
+}
+.container .meal-wrapper .meal-details {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: var(--auxiliar_color);
+  border-radius: 1.5rem;
+  width: 55%;
+  height: 90%;
+  overflow-y: scroll;
+  padding: 1rem;
+  display: none;
+}
+.container .meal-wrapper .meal-details ::-webkit-scrollbar {
+  width: 10px;
+}
+.container .meal-wrapper .meal-details ::-webkit-scrollbar {
+  width: 10px;
+}
+.container .meal-wrapper .meal-details ::-webkit-scrollbar-thumb {
+  background: white;
+}
+.container .meal-wrapper .meal-details .meal-details-content {
+  margin: 2rem;
+}
+.container .meal-wrapper .meal-details .meal-details-content .recipe-title {
+  color: var(--primary_color);
+  font-weight: bold;
+  text-shadow: 0.5px 0.5px 1px white;
+}
+.container .meal-wrapper .meal-details .meal-details-content .recipe-category {
+  background-color: var(--secondary_color);
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+}
+.container .meal-wrapper .meal-details .meal-details-content .recipe-instruct h3 {
+  font-size: 1.2rem;
+}
+.container .meal-wrapper .meal-details .meal-details-content .recipe-instruct p {
+  font-size: 0.9rem;
+}
+.container .meal-wrapper .meal-details .meal-details-content .recipe-meal-img img {
+  width: 250px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0px auto;
+  display: block;
+}
+.container .meal-wrapper .meal-details .meal-details-content .recipe-link {
+  margin: 1.4rem;
+}
+.container .meal-wrapper .meal-details .meal-details-content .recipe-link a {
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.2s linear;
+  font-weight: bold;
+}
+.container .meal-wrapper .meal-details .meal-details-content .recipe-link a:hover {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.container .meal-wrapper .showRecipe {
+  display: block;
+}
+
+footer {
+  background-color: var(--secondary_color_dark);
+  height: 100px;
+  color: white;
+  text-align: center;
+  line-height: 100px;
+}
+
+/*Java Script*/
+.notFound {
+  grid-template-columns: 1fr !important;
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+/*Media querys */
+@media screen and (max-width: 1200px) {
+  .container .meal-wrapper .meal-search .meal-search-box .search-btn {
+    width: 7%;
+  }
+  .container .meal-wrapper .meal-result #meal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .container .meal-wrapper .meal-details {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .title {
+    font-size: 2.1rem;
+    margin-bottom: 3rem;
+  }
+  .container .meal-wrapper .meal-search .welcome {
+    font-size: 1.1rem;
+    padding: 0 0.5rem;
+    margin-bottom: 3.5rem;
+  }
+  .container .meal-wrapper .meal-search .meal-search-box .search-content {
+    width: 96%;
+  }
+  .container .meal-wrapper .meal-search .meal-search-box .search-btn {
+    width: 10%;
+  }
+  .container .meal-wrapper .meal-result #meal .meal-item {
+    width: 96%;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  footer {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container .meal-wrapper .meal-search .welcome {
+    padding: 0;
+  }
+  .container .meal-wrapper .meal-search .meal-search-box .search-content {
+    width: 80%;
+  }
+  .container .meal-wrapper .meal-search .meal-search-box .search-btn {
+    width: 13%;
+  }
+  .container .meal-wrapper .meal-result #meal {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .container .meal-wrapper .meal-result #meal .meal-item {
+    width: 100%;
+  }
+  .container .meal-wrapper .meal-details {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  .container .meal-wrapper .meal-search .welcome {
+    font-size: 1rem;
+    padding: 0;
+  }
+  .container .meal-wrapper .meal-search .meal-search-box .search-content {
+    width: 75%;
+    padding: 0rem 1rem;
+    font-size: 0.9rem;
+  }
+  .container .meal-wrapper .meal-search .meal-search-box .search-btn {
+    width: 25%;
+  }
+  .container .meal-wrapper .meal-result #meal .meal-item {
+    width: 90%;
+  }
+  .container .meal-wrapper .meal-result #meal img {
+    height: 200px;
+  }
+  footer {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (max-width: 442px) {
+  .container .meal-wrapper .meal-details .meal-details-content {
+    margin: 0.5rem;
+  }
+  .container .meal-wrapper .meal-details .meal-details-content .recipe-title {
+    font-size: 1.3rem;
+  }
+  .container .meal-wrapper .meal-details .meal-details-content .recipe-category {
+    padding: 0.1rem 0.3rem;
+    font-size: 0.7rem;
+  }
+  .container .meal-wrapper .meal-details .meal-details-content .recipe-instruct h3 {
+    font-size: 1rem;
+  }
+  .container .meal-wrapper .meal-details .meal-details-content .recipe-instruct p {
+    font-size: 0.8rem;
+  }
+  .container .meal-wrapper .meal-details .meal-details-content .recipe-meal-img img {
+    width: 208px;
+    height: 170px;
+  }
+  .container .meal-wrapper .meal-details .meal-details-content .recipe-link a {
+    color: white;
+    font-size: 1rem;
+  }
+  .container .meal-wrapper .meal-details .meal-details-content .recipe-link a:hover {
+    color: white;
+    font-size: 1.1rem;
+  }
+}/*# sourceMappingURL=styles.css.map */
