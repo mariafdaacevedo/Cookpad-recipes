@@ -12,5 +12,7 @@ Estado del proyecto: En proceso, hasta el momento el proyecto cuenta con la opci
 Teconologías implementadas: JavaScript, CSS-Bootstrap-SASS y hmtl y API https://www.themealdb.com/api.php
 
 ![foorecipeapp1](https://user-images.githubusercontent.com/113567795/223597429-6ee5b471-1488-4532-b2a7-99d049440be9.png)
+![foorecipeapp2](https://user-images.githubusercontent.com/113567795/223597622-8c7a2ea0-3504-45eb-be35-91e009f1fc43.png)
+
 
 
